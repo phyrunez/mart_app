@@ -1,8 +1,8 @@
 import { gql } from "apollo-server-micro";
 
 export const GET_DATA = gql`
-  {
-    getData {
+  query Data($search: String, $month: String){
+    getData (search: $search, month: $month) {
         date
         transactions {
             id

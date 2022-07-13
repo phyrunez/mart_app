@@ -1,39 +1,42 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import TransactionNav from '../transactionNav/TransactionNav'
 import TransactionFilter from '../transactionFilter/TransactionFilter'
 import TransactionData from '../transactionData/TransactionData'
-import { useQuery } from '@apollo/client';
+import { useLazyQuery } from '@apollo/client';
 import { GET_DATA } from '../../Queries/queries'
 
 
 const TransactionMain = () => {
-  const {loading, error, data} = useQuery(GET_DATA);
+  const [getData, { loading, error, data } ]= useLazyQuery(GET_DATA);
 
   const [searchTerm, setSearchTerm] = useState("")
   const [searchResults, setSearchResults] = useState([])
 
-  const searchHandler = (searchTerm) => {
-    setSearchTerm(searchTerm);
-    if (searchTerm !== "") {
-      const newTransactionList = data.filter(transac => {
-        return Object.values(transac).join(" ").toLowerCase().includes(searchTerm.toLowerCase())
-      });
-      setSearchResults(newTransactionList);
-    }else {
-      setSearchResults(data)
-    }
+  const searchHandler = (search) => {
+    getData({variables: {search}})
   }
+
+  const filterHandler = (month) => {
+    getData({ variables: { month } });
+  };
+
+  useEffect(() => {
+    getData();
+  }, [])
 
   return (
     <div className="main_main">
-        <TransactionNav 
-          searchKeyword={searchHandler} 
-          transacs={searchTerm.length < 1 ? data : searchResults }
-        />
-        <TransactionFilter />
-        <TransactionData />
+      <TransactionNav searchHandler={searchHandler} />
+      <TransactionFilter filterHandler={filterHandler} />
+      {!loading && data ? (
+        <TransactionData data={data} />
+      ) : !loading && !data ? (
+        <div>Unexpected Error!</div>
+      ) : (
+        <div>Loading...</div>
+      )}
     </div>
-  )
+  );
 }
 
 export default TransactionMain

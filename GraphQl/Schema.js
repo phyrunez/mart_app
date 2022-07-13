@@ -25,7 +25,7 @@ const Schema = gql`
     }
     
     type Query {
-        getData: [GroupedData]
+        getData(search: String, month: String): [GroupedData]
     }
 `
 

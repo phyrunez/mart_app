@@ -2,23 +2,12 @@ import React, { useState, useRef } from 'react'
 import { useQuery } from '@apollo/client';
 import { GET_DATA } from '../../Queries/queries'
 
-const TransactionNav = (props) => {
-  const inputEl = useRef("")
-  const {loading, error, data} = useQuery(GET_DATA);
-  const [filteredData, setFilteredData] = useState([]);
+const TransactionNav = ({searchHandler}) => {
+  const [query, setQuery] = useState("");
 
   const handleSearch = (event) => {
-    let value = event.target.value.toLowerCase();
-    let result = [];
-    console.log(value);
-    result = data.getData.filter((data) => {
-      return data.data.search(value) != -1;
-    });
-    setFilteredData(data);
-  }
-
-  const getSearchTerm = () => {
-    props.searchKeyword(inputEl.current.value)
+    searchHandler(query)
+    setQuery('')
   }
 
   return (
@@ -29,12 +18,12 @@ const TransactionNav = (props) => {
         </div>
         <div className="navRight">
             <input 
-              ref={inputEl}
               type="text" 
+              value={query}
               placeholder="search by Username" 
-              onChange={getSearchTerm}
+              onChange={(e) => setQuery(e.target.value)}
             />
-            <button type="button" onClick={(e) => handleSearch(e)}>Search</button>
+            <button type="button" onClick={ handleSearch}>Search</button>
         </div>
     </div>
   )
