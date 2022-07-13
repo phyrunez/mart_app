@@ -1,0 +1,85 @@
+.tranc-nav {
+    display: flex;
+    font-family: cursive;
+    width: 100%;
+}
+
+.navLeft {
+    display: flex;
+    margin: 7px 0 0 7px
+}
+
+.navRight {
+    margin: 20px 0 0 500px;
+    border: 20px 20px 0 0;
+}
+
+.navRight input {
+    padding: 10px;
+    font-family: cursive;
+    border-radius: 10px 0 0 0;
+    border: white;
+}
+
+.navRight input:focus{
+    outline: none;
+}
+
+.navRight button {
+    padding: 10px;
+    color: white;
+    font-family: cursive;
+    background: #FF6376;
+    border: #FF6376;
+    border-radius: 0 10px 0 0;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1350px) {
+    .navRight {
+        margin: 20px 0 0 800px;
+        border: 20px 20px 0 0;
+    }
+}
+
+@media only screen and (max-width: 1250px) {
+    .navRight {
+        margin: 20px 0 0 700px;
+        border: 20px 20px 0 0;
+    }
+}
+
+@media only screen and (max-width: 1150px) {
+    .navRight {
+        margin: 20px 0 0 650px;
+        border: 20px 20px 0 0;
+    }
+}
+
+@media only screen and (max-width: 1110px) {
+    .navRight {
+        margin: 20px 0 0 550px;
+        border: 20px 20px 0 0;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .navRight {
+        margin: 20px 0 0 500px;
+        border: 20px 20px 0 0;
+    }
+}
+
+@media only screen and (max-width: 1080px) {
+    .navRight {
+        margin: 20px 0 0 500px;
+        border: 20px 20px 0 0;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .navRight {
+        margin: 20px 0 0 400px;
+        border: 20px 20px 0 0;
+    }
+}

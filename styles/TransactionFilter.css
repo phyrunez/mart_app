@@ -1,0 +1,76 @@
+.main-filter {
+    display: grid;
+    grid-template-columns: 8rem 8rem 8rem 8rem 8rem 8rem;
+    grid-gap: 1rem;
+    grid-auto-flow: row;
+    width: 100%;
+    margin: 40px 0 0 37px;
+}
+
+.main-filter .january, .february, .march, .april, .may, .june,
+.july, .august, .september, .october, .november, .december {
+    font-family: cursive;
+    color: white;
+    padding: 8px;
+    text-align: center;
+    border: 2px solid #FF6376;
+    background: transparent;
+    border-radius: 10px 10px 0 0;
+}
+
+.main-filter .january:hover, .february:hover, .march:hover, .april:hover, .may:hover, .june:hover,
+.july:hover, .august:hover, .september:hover, .october:hover, .november:hover, .december:hover {
+    background: #FF6376;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1350px) {
+    .main-filter {
+        display: grid;
+        grid-template-columns: 10rem 10rem 10rem 10rem 10rem 10rem;
+        grid-gap: 2rem;
+       
+        width: 100%;
+        margin: 40px 0 0 65px;
+    }
+}
+
+@media only screen and (max-width: 1250px) {
+    .main-filter {
+        display: grid;
+        grid-template-columns: 12rem 12rem 12rem 12rem 12rem;
+        grid-gap: 1rem;
+        width: 80%;
+        margin: 40px 0 0 65px;
+    }
+}
+
+@media only screen and (max-width: 1150px) {
+    .main-filter {
+        display: grid;
+        grid-template-columns: 14rem 14rem 14rem 14rem;
+        grid-gap: 1rem;
+        width: 100%;
+        margin: 40px 0 0 65px;
+    }
+}
+
+@media only screen and (max-width: 1110px) {
+    .main-filter {
+        display: grid;
+        grid-template-columns: 12rem 12rem 12rem 12rem;
+        grid-gap: 1rem;
+        width: 100%;
+        margin: 40px 0 0 65px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .main-filter {
+        display: grid;
+        grid-template-columns: 14rem 14rem 14rem;
+        grid-gap: 1rem;
+        width: 100%;
+        margin: 40px 0 0 55px;
+    }
+}
