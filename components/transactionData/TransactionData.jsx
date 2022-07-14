@@ -6,7 +6,6 @@ import Image from "next/image";
 import moment from "moment";
 
 const TransactionData = ({ data }) => {
-    console.log(data)
   return data.getData.map((group) => (
     <>
       <TrancDate date={group.date} />
@@ -45,12 +44,12 @@ const TransactionData = ({ data }) => {
                 <li>
                   Balance <span className="name">${result.balance}</span>
                 </li>
-                <li>
+                {/* <li>
                   Date{" "}
                   <span className="name">
                     {moment(result.date).format("Do MMMM")}
                   </span>
-                </li>
+                </li> */}
                 <li>
                   Quantity <span className="name">{result.quantity}</span>
                 </li>

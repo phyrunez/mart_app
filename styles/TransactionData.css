@@ -14,12 +14,6 @@
     margin-left: 5px;
 }
 
-.loading {
-    text-align: center;
-    font-weight: bold;
-    margin-top: 50px;
-}
-
 .main-data-display {
     color: black;
     padding: 8px;
@@ -29,7 +23,7 @@
     border-radius: 10px 10px 0 0;
     margin-left: 35px;
     /* margin-bottom: 25px; */
-    width: 310px;
+    width: 380px;
 }
 
 .main-data-img, .main-data-img img {

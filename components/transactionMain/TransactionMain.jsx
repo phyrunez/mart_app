@@ -12,8 +12,8 @@ const TransactionMain = () => {
   const [searchTerm, setSearchTerm] = useState("")
   const [searchResults, setSearchResults] = useState([])
 
-  const searchHandler = (search) => {
-    getData({variables: {search}})
+  const searchHandler = (month) => {
+    getData({variables: {month}})
   }
 
   const filterHandler = (month) => {
@@ -32,11 +32,13 @@ const TransactionMain = () => {
         <TransactionData data={data} />
       ) : !loading && !data ? (
         <div>Unexpected Error!</div>
-      ) : (
-        <div>Loading...</div>
-      )}
+      ) : loading && !data ? (
+        <div className="loading">No Results Found...</div>
+      ) : (<div className="loading">Loading...</div>)
+      }
+    
     </div>
-  );
+  )    
 }
 
 export default TransactionMain
